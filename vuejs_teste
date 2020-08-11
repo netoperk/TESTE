@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COMPONENTES DE VUE</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+	<div id="app">
+		<h3 style="border-bottom: 1px solid #ccc;">Bienvenidos al Curso de Vue</h3>
+		<saludo></saludo>
+		
+	</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script>
+	Vue.component('saludo',{
+		template:`<div>
+						<label>Digite Nombre:</label>
+						<input type="text"  id="nombre" name="nombre" v-model="nombre"/>
+						<label>Edad:</label>
+						<input type="number"  id="edad" name="edad" v-model="edad" @keyup.enter="agregar"/>
+						<button class="btn btn-primary btn-sm" type="button" @click="agregar">Agregar</button>
+						<ul>
+							<li v-for="person of personas">{{person.nombre}} - {{person.edad}}<span v-if="person.edad > 18"> Mayor de edad</span></li>
+						</ul>
+					</div>`,
+		data(){
+			return{
+				saludo:'Saludo desde data',
+				nombre: '',
+				edad: 0,
+				personas:[]
+			}
+		},
+		methods:{
+			agregar(){
+				this.personas.push({
+					nombre: this.nombre.toUpperCase(),edad:this.edad
+				});
+				this.nombre ='';
+				this.edad = 0;
+			}
+		}
+	});
+	new Vue({
+		el:'#app'
+	});
+</script>
+</html>
