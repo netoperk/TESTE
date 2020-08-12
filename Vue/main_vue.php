@@ -1,7 +1,3 @@
-<?php
-session_start();
-$_SESSION['usuario'] = "PEDRO";
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +19,7 @@ $_SESSION['usuario'] = "PEDRO";
 <script>
 	const store = new Vuex.Store({
 		state:{
-			log_user:"<?php echo $_SESSION['usuario']; ?>",
+			log_user:'PEDRO',
 			numero:0,
 			progs:[]
 		},
@@ -36,6 +32,10 @@ $_SESSION['usuario'] = "PEDRO";
 			},
 			llenarDatos(state,datosAccion){
 				state.progs = datosAccion
+			},
+			cambiarUsuario(state,user){
+				state.log_user = user
+				console.log(user);
 			}
 		},
 		actions:{

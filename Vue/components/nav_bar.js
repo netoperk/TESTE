@@ -31,20 +31,24 @@ Vue.component('main_nav',{
 						          <i class="fas fa-user"></i> 
 						          {{log_user}}
 						        </a>
-						        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						          <a class="dropdown-item" href="#">Action</a>
-						          <a class="dropdown-item" href="#">Another action</a>
-						          <div class="dropdown-divider"></div>
-						          <a class="dropdown-item" href="#">Something else here</a>
+						        <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+						          <a class="dropdown-item" href="#" @click="cambiarUsuario(item.usuario)" v-for="item of progs">{{item.usuario}}</a>						          
 						        </div>
 						      </li>
 						    </ul>
 						    
 						  </div>
 						</nav>
+						<br>
+						<br><br><br><br><br><br><br><br>
+						<button type="button" @click="aumentar" class="btn btn-info btn-sm">+</button>
+						<button type="button" @click="disminuir" class="btn btn-danger btn-sm">-</button>						
 					</div>
 				`,
 				computed:{
-					...Vuex.mapState(['log_user'])
-				}
+					...Vuex.mapState(['log_user','progs'])
+				},
+		methods:{
+			...Vuex.mapMutations(['aumentar','disminuir','cambiarUsuario'])			
+		}
 	});

@@ -17,12 +17,12 @@ Vue.component('main_component',{
 			...Vuex.mapState(['log_user','numero','progs'])
 		},
 		methods:{
-			...Vuex.mapMutations(['aumentar','disminuir']),
+			...Vuex.mapMutations(['aumentar','disminuir','cambiarUsuario']),
 			...Vuex.mapActions(['obtenerDatos'])	
 		},
 		created: function(){
-			///this.getSession()
-			this.obtenerDatos();
-		}
+        	///this.getSession()
+        	this.obtenerDatos();
+    	}
 
 	});
