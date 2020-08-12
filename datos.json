@@ -1,0 +1,22 @@
+[
+	{
+		"id_programador": 1,
+		"usuario":"CARLOSR",
+		"admin": false
+	},
+	{
+		"id_programador": 2,
+		"usuario":"EEDGARDO",
+		"admin": false
+	},
+	{
+		"id_programador": 3,
+		"usuario":"JUAN",
+		"admin": false
+	},
+	{
+		"id_programador": 4,
+		"usuario":"PEDRO",
+		"admin": true
+	}
+]
