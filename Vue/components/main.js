@@ -19,6 +19,10 @@ Vue.component('main_component',{
 		methods:{
 			...Vuex.mapMutations(['aumentar','disminuir']),
 			...Vuex.mapActions(['obtenerDatos'])	
+		},
+		created: function(){
+			///this.getSession()
+			this.obtenerDatos();
 		}
 
 	});
